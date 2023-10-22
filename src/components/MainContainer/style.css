@@ -16,11 +16,12 @@
 }
 
 .graphics-container {
-  width: 70%;
+  width:auto;
   display: flex;
   flex-direction: column;
 }
 
 .small-graphics-container {
   display: flex;
+  justify-content: space-between;
 }
