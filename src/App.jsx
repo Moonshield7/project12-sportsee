@@ -1,5 +1,6 @@
 import './App.css'
 import LateralNavbar from './components/LateralNavbar'
+import MainContainer from './components/MainContainer'
 import TopNavbar from './components/TopNavbar'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <div>
         <TopNavbar />
         <LateralNavbar />
+        <MainContainer />
       </div>
   )
 }

@@ -10,7 +10,7 @@ function LateralNavbar() {
         <NavbarIcon content="bike"/>
         <NavbarIcon content="weight"/>
       </div>
-      <p>Copiryght, SportSee 2020</p>
+      <p className='copyright'>Copiryght, SportSee 2020</p>
     </nav>
   );
 }

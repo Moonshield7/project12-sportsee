@@ -21,3 +21,10 @@
   justify-content: space-between;
   height: 316px;
 }
+
+.copyright {
+  transform: rotate(270deg);
+  width: 138px;
+  font-size: 12px;
+  margin-bottom: 45px;
+}

@@ -1,0 +1,11 @@
+.title-area {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name-user {
+  color: #FF0101;
+}
