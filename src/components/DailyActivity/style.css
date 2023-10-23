@@ -1,4 +1,7 @@
 .daily-activity-container {
-  width: 835px;
+  min-width: 835px;
   height: 320px;
+  margin-bottom: 20px;
+  background-color: rgb(251, 251, 251);
+  border-radius: 15px;
 }

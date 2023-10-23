@@ -1,6 +1,7 @@
 import AverageSessionDuration from '../AverageSessionDuration';
 import DailyActivity from '../DailyActivity';
 import Intensity from '../Intensity';
+import MacroCard from '../MacroCard';
 import Score from '../Score';
 import TitleArea from '../TitleArea';
 import './style.css'
@@ -18,12 +19,12 @@ function MainContainer () {
             <Score />
           </div>
         </div>
-        <div>
-          <p>truc</p>
-          <p>truc</p>
-          <p>truc</p>
-          <p>truc</p>
-        </div>
+        <ul className='macro-container'>
+          <MacroCard type="Calories" />
+          <MacroCard type="Protéines" />
+          <MacroCard type="Glucides" />
+          <MacroCard type="Lipides" />
+        </ul>
       </div>
     </main>
   )

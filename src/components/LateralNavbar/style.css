@@ -1,6 +1,6 @@
 .lateral-navbar {
   width: 117px;
-  height: 100vh;
+  min-height: 100%;
   background-color: black;
   color: white;
   position: fixed;

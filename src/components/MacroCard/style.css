@@ -1,0 +1,43 @@
+.macro-card {
+  width: 260px;
+  height: 125px;
+  background-color: rgb(251, 251, 251);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.macro-card img {
+  height: 60px;
+  width: 60px;
+}
+
+.macro-card-text {
+  margin-left: 20px;
+}
+
+.macro-card-text h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #282D30;
+}
+
+.macro-card-text p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #74798C;
+}
+
+@media screen and (max-width: 1315px) {
+  .macro-card {
+    width: 182px;
+    height: 87.5px;
+  }
+  .macro-card img {
+    width: 50px;
+    height: 50px;
+  }
+}
