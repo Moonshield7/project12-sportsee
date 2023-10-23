@@ -28,3 +28,12 @@
   font-size: 12px;
   margin-bottom: 45px;
 }
+
+@media screen and (max-height: 760px) {
+  .lateral-navbar {
+    padding-top: 10%;
+  }
+  .lateral-logo-container {
+    transform: scale(0.8);
+  }
+}
