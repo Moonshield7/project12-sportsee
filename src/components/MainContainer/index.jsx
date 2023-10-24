@@ -6,10 +6,14 @@ import Score from '../Score';
 import TitleArea from '../TitleArea';
 import './style.css'
 
-function MainContainer () {
+function MainContainer ({dataUser, dataActivity, dataAverageSession, dataPerformance}) {
+  // console.log(dataUser.keyData)
+  const userInfos = dataUser.userInfos;
+  const keyData = dataUser.keyData;
+  
   return (
     <main className="main-container">
-      <TitleArea />
+      <TitleArea userName={userInfos.firstName} />
       <div className='tracking-container'>
         <div className='graphics-container'>
           <DailyActivity />
@@ -20,10 +24,10 @@ function MainContainer () {
           </div>
         </div>
         <ul className='macro-container'>
-          <MacroCard type="Calories" />
-          <MacroCard type="Protéines" />
-          <MacroCard type="Glucides" />
-          <MacroCard type="Lipides" />
+          <MacroCard type="Calories" value={keyData.calorieCount} />
+          <MacroCard type="Protéines" value={keyData.carbohydrateCount} />
+          <MacroCard type="Glucides" value={keyData.lipidCount} />
+          <MacroCard type="Lipides" value={keyData.proteinCount} />
         </ul>
       </div>
     </main>

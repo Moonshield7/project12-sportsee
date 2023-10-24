@@ -1,16 +1,13 @@
 import './App.css'
-import LateralNavbar from './components/LateralNavbar'
-import MainContainer from './components/MainContainer'
-import TopNavbar from './components/TopNavbar'
+import Profile from './pages/Profile'
+
 
 function App() {
 
 
   return (
       <div>
-        <TopNavbar />
-        <LateralNavbar />
-        <MainContainer />
+        <Profile />
       </div>
   )
 }

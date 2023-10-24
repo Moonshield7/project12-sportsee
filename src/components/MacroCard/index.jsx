@@ -4,7 +4,7 @@ import fat from '../../assets/fat-icon.png';
 import protein from '../../assets/protein-icon.png';
 import './style.css';
 
-function MacroCard ({type}) {
+function MacroCard ({type, value}) {
   let pic;
   switch(type){
     case "Calories" :
@@ -23,13 +23,13 @@ function MacroCard ({type}) {
       console.log("Wrong type for macro card");
       break;
   }
-  return <li className='macro-card'>
+  return (<li className='macro-card'>
     <img src={pic} alt="" />
     <div className='macro-card-text'>
-      <h3>155g</h3>
+      <h3>{type === "Calories" ? `${value}kCal` : `${value}g`}</h3>
       <p>{type}</p>
     </div>
-  </li>
+  </li>);
 }
 
 export default MacroCard;
