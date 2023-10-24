@@ -1,0 +1,28 @@
+.home {
+  width: 100%;
+  height: 50vw;
+}
+
+.home-links {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-users {
+  width: 150px;
+  height: 150px;
+  background-color: grey;
+  margin: 35px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50%;
+}
+.home-users:hover {
+  cursor: pointer;
+}

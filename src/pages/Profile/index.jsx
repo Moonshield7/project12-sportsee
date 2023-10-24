@@ -3,13 +3,17 @@ import CallApi from '../../utils/CallApi'
 
 
 function Profile () {
-  // const { idUser } = useParams();
+  const { userId } = useParams();
 
-  return (
-    <div>
-      <CallApi userID={12} />
-    </div>
-  )
+
+  if(userId !== undefined){
+    return (
+      <div>
+        <CallApi valueId={userId} />
+      </div>
+    )
+  }
+
 
 }
 

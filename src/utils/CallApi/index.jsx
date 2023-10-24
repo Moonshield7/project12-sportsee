@@ -4,7 +4,7 @@ import MainContainer from "../../components/MainContainer";
 import TopNavbar from "../../components/TopNavbar";
 import LateralNavbar from "../../components/LateralNavbar";
 
-function CallApi ({userID}) {
+function CallApi ({valueId}) {
   const [user, setUser] = useState();
   const [activity, setActivity] = useState();
   const [averageSession, setAverageSession] = useState();
@@ -35,25 +35,25 @@ function CallApi ({userID}) {
       setPerformance(dataPerformance.data.data);
     }
 
-    getUser(18);
-    getActivity(18);
-    getAverageSession(18);
-    getPerformance(18);
-  }, []);
+    getUser(valueId);
+    getActivity(valueId);
+    getAverageSession(valueId);
+    getPerformance(valueId);
+  }, [valueId]);
 
   // console.log('user :', user)
   // console.log('activity', activity)
   // console.log('session', averageSession)
   // console.log('performance', performance)
-  // console.log({userID})
+  // console.log({valueId})
 
-  if(user !== undefined) {
+  if(user !== undefined && activity !== undefined && averageSession !== undefined && performance !== undefined) {
     return (
       <div>
-      <TopNavbar />
-      <LateralNavbar />
-      <MainContainer dataUser={user} dataActivity={activity} dataAverageSession={averageSession} dataPerformance={performance} />
-      </div>
+        <TopNavbar />
+        <LateralNavbar />
+        <MainContainer dataUser={user} dataActivity={activity} dataAverageSession={averageSession}  dataPerformance={performance} />
+        </div>
     );
   }
 }
