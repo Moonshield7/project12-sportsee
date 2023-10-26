@@ -16,10 +16,10 @@ function MainContainer ({dataUser, dataActivity, dataAverageSession, dataPerform
       <TitleArea userName={userInfos.firstName} />
       <div className='tracking-container'>
         <div className='graphics-container'>
-          <DailyActivity />
+          <DailyActivity data={dataActivity} />
           <div className='small-graphics-container'>
             <AverageSessionDuration data={dataAverageSession} />
-            <Intensity />
+            <Intensity data={dataPerformance} />
             <Score scoreValue={dataUser.score || dataUser.todayScore}/>
           </div>
         </div>

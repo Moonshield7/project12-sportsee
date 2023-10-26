@@ -1,7 +1,37 @@
 import './style.css'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
-function Intensity () {
-  return <div className='intensity-box'>Intensity</div>
+
+function Intensity ({data}) {
+  const activityType = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"]
+
+  // console.log(data)
+
+  function formatingData() {
+    const rawDatas = [];
+    data.forEach((activity, i) => {
+      rawDatas.push({
+        kind: activityType[i],
+        value: activity.value
+      })
+    });
+    return rawDatas;
+  }
+
+  const formatedData = formatingData();
+
+  // console.log("après", formatedData)
+
+  return (
+    <div className='intensity-box'>
+      <RadarChart width={255} height={255} cx="50%" outerRadius="80%" data={formatedData} startAngle={30} endAngle={-330}>
+        <PolarGrid radialLines={false} />
+        <PolarAngleAxis dataKey="kind" tick={{ fontSize: '11px', fontWeigth: 500, fill: '#FFF' }} />
+        <PolarRadiusAxis axisLine={false} tick={false} />
+        <Radar dataKey="value" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.7} />
+      </RadarChart>
+    </div>
+  )
 }
 
 export default Intensity;

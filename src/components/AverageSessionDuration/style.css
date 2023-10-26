@@ -4,3 +4,13 @@
   background-color: #FF0000;
   border-radius: 15px;
 }
+
+.legend {
+  position: absolute;
+  width: 150px;
+  margin: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  z-index: 1;
+  color: #ffffff9c ;
+}
