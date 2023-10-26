@@ -7,7 +7,7 @@ import TitleArea from '../TitleArea';
 import './style.css'
 
 function MainContainer ({dataUser, dataActivity, dataAverageSession, dataPerformance}) {
-  // console.log(dataUser.keyData)
+  // console.log(dataAverageSession)
   const userInfos = dataUser.userInfos;
   const keyData = dataUser.keyData;
   
@@ -18,9 +18,9 @@ function MainContainer ({dataUser, dataActivity, dataAverageSession, dataPerform
         <div className='graphics-container'>
           <DailyActivity />
           <div className='small-graphics-container'>
-            <AverageSessionDuration />
+            <AverageSessionDuration data={dataAverageSession} />
             <Intensity />
-            <Score />
+            <Score scoreValue={dataUser.score || dataUser.todayScore}/>
           </div>
         </div>
         <ul className='macro-container'>
