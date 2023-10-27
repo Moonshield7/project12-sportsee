@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './style.css';
 
 function TitleArea ({userName}) {
@@ -8,5 +9,9 @@ function TitleArea ({userName}) {
     </div>
   );
 }
+
+TitleArea.propTypes = {
+  userName: PropTypes.string
+};
 
 export default TitleArea;

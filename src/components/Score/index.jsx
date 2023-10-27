@@ -1,5 +1,7 @@
 import './style.css';
 import { PieChart, Pie } from 'recharts';
+import PropTypes from 'prop-types';
+
 
 function Score ({scoreValue}) {
   const data = [
@@ -24,5 +26,9 @@ function Score ({scoreValue}) {
     </div>
   );
 }
+
+Score.propTypes = {
+  scoreValue: PropTypes.number
+};
 
 export default Score;

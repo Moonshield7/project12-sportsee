@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import AverageSessionDuration from '../AverageSessionDuration';
 import DailyActivity from '../DailyActivity';
 import Intensity from '../Intensity';
@@ -33,5 +34,12 @@ function MainContainer ({dataUser, dataActivity, dataAverageSession, dataPerform
     </main>
   );
 }
+
+MainContainer.propTypes = {
+  dataUser: PropTypes.object,
+  dataActivity: PropTypes.array,
+  dataAverageSession: PropTypes.array,
+  dataPerformance: PropTypes.array,
+};
 
 export default MainContainer;

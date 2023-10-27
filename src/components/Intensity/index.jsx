@@ -1,9 +1,10 @@
-import './style.css'
+import './style.css';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
+import PropTypes from 'prop-types';
 
 
 function Intensity ({data}) {
-  const activityType = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"]
+  const activityType = ['Cardio', 'Energie', 'Endurance', 'Force', 'Vitesse', 'Intensité'];
 
   // console.log(data)
 
@@ -13,7 +14,7 @@ function Intensity ({data}) {
       rawDatas.push({
         kind: activityType[i],
         value: activity.value
-      })
+      });
     });
     return rawDatas;
   }
@@ -31,7 +32,10 @@ function Intensity ({data}) {
         <Radar dataKey="value" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.7} />
       </RadarChart>
     </div>
-  )
+  );
 }
 
+Intensity.propTypes = {
+  data: PropTypes.array
+};
 export default Intensity;

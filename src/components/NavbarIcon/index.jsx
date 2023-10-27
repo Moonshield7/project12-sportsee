@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import sit from '../../assets/icon-sit.png';
 import swim from '../../assets/icon-swim.png';
 import bike from '../../assets/icon-bike.png';
@@ -18,5 +19,8 @@ function NavbarIcon ({content}) {
   }
 }
 
+NavbarIcon.propTypes = {
+  content: PropTypes.string
+};
 
 export default NavbarIcon;

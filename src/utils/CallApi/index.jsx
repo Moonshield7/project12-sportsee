@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import MainContainer from '../../components/MainContainer';
@@ -57,5 +58,9 @@ function CallApi ({valueId}) {
     );
   }
 }
+
+CallApi.propTypes = {
+  valueId: PropTypes.string
+};
 
 export default CallApi;

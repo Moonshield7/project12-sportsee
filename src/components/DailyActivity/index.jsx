@@ -1,5 +1,6 @@
 import './style.css';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import PropTypes from 'prop-types';
 
 function DailyActivity ({data}) {
   // Formate les données pour que la légende de l'axe X corresponde à la maquette
@@ -11,7 +12,7 @@ function DailyActivity ({data}) {
         day: index,
         kilogram: elem.kilogram,
         calories: elem.calories
-      })
+      });
     });
     return rawDatas;
   }
@@ -28,6 +29,11 @@ function DailyActivity ({data}) {
       );
     }
     return null;
+  };
+
+  CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array
   };
 
   return (
@@ -51,5 +57,9 @@ function DailyActivity ({data}) {
     </div>
   ); 
 }
+
+DailyActivity.propTypes = {
+  data: PropTypes.array
+};
 
 export default DailyActivity;
