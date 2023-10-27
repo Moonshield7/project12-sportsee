@@ -1,5 +1,5 @@
-import { useParams } from "react-router";
-import CallApi from '../../utils/CallApi'
+import { useParams } from 'react-router';
+import CallApi from '../../utils/CallApi';
 
 
 function Profile () {
@@ -11,7 +11,7 @@ function Profile () {
       <div>
         <CallApi valueId={userId} />
       </div>
-    )
+    );
   }
 
 

@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import MainContainer from "../../components/MainContainer";
-import TopNavbar from "../../components/TopNavbar";
-import LateralNavbar from "../../components/LateralNavbar";
+import { useEffect } from 'react';
+import { useState } from 'react';
+import MainContainer from '../../components/MainContainer';
+import TopNavbar from '../../components/TopNavbar';
+import LateralNavbar from '../../components/LateralNavbar';
 
 function CallApi ({valueId}) {
   const [user, setUser] = useState();
@@ -12,9 +12,9 @@ function CallApi ({valueId}) {
 
   useEffect(() => {
     async function getUser(idUser) {
-      const response = await fetch(`http://localhost:3000/user/${idUser}`)
+      const response = await fetch(`http://localhost:3000/user/${idUser}`);
       const dataUser = await response.json();
-      setUser(dataUser.data)
+      setUser(dataUser.data);
     }
 
     async function getActivity(idUser) {

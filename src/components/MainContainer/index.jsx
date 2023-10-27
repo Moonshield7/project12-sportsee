@@ -4,7 +4,7 @@ import Intensity from '../Intensity';
 import MacroCard from '../MacroCard';
 import Score from '../Score';
 import TitleArea from '../TitleArea';
-import './style.css'
+import './style.css';
 
 function MainContainer ({dataUser, dataActivity, dataAverageSession, dataPerformance}) {
   // console.log(dataAverageSession)
@@ -12,7 +12,7 @@ function MainContainer ({dataUser, dataActivity, dataAverageSession, dataPerform
   const keyData = dataUser.keyData;
   
   return (
-    <main className="main-container">
+    <main className='main-container'>
       <TitleArea userName={userInfos.firstName} />
       <div className='tracking-container'>
         <div className='graphics-container'>
@@ -24,14 +24,14 @@ function MainContainer ({dataUser, dataActivity, dataAverageSession, dataPerform
           </div>
         </div>
         <ul className='macro-container'>
-          <MacroCard type="Calories" value={keyData.calorieCount} />
-          <MacroCard type="Protéines" value={keyData.carbohydrateCount} />
-          <MacroCard type="Glucides" value={keyData.lipidCount} />
-          <MacroCard type="Lipides" value={keyData.proteinCount} />
+          <MacroCard type='Calories' value={keyData.calorieCount} />
+          <MacroCard type='Protéines' value={keyData.carbohydrateCount} />
+          <MacroCard type='Glucides' value={keyData.lipidCount} />
+          <MacroCard type='Lipides' value={keyData.proteinCount} />
         </ul>
       </div>
     </main>
-  )
+  );
 }
 
 export default MainContainer;

@@ -1,10 +1,8 @@
 import './style.css';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 
 function DailyActivity ({data}) {
-
-  // console.log(data)
-
+  // Formate les données pour que la légende de l'axe X corresponde à la maquette
   function formatingData() {
     const rawDatas = [];
     data.forEach((elem, i) => {
@@ -17,10 +15,20 @@ function DailyActivity ({data}) {
     });
     return rawDatas;
   }
-
   const formatedData = formatingData();
 
-  console.log("après", formatedData)
+  // Retourne un tooltip personnalisé pour le graphique
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className='daily-activity-tooltip'>
+          <p>{`${payload[0].value}kg`}</p>
+          <p>{`${payload[1].value}kCal`}</p>
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <div className="daily-activity-container">
@@ -31,19 +39,17 @@ function DailyActivity ({data}) {
           <p> <span className='dot2'> </span>Calories brûlées (kCal)</p>
         </div>
       </div>
-      <BarChart width={830} height={250} data={formatedData} barGap={10} margin={{ top: 5, right: -25, bottom: 5, left: 5 }}>
-        <XAxis scale='point' dataKey="day" stroke="#9B9EAC" padding={{left:10, right: 12}}/>
-        <YAxis yAxisId="right" orientation="right" stroke="#9B9EAC" type="number" domain={['dataMin -1', 'dataMax +1']}  />
+      <BarChart width={830} height={250} data={formatedData} barGap={10} margin={{ top: 5, right: 0, bottom: 5, left: 0 }} >
+        <XAxis dataKey="day" stroke="#9B9EAC" padding={{left:10, right: 12}}/>
+        <YAxis yAxisId="right" orientation="right" stroke="#9B9EAC" type="number" domain={['dataMin -1', 'dataMax +1']} allowDecimals={false}  />
         <YAxis yAxisId="left" orientation="left" hide={true} />
-        <Tooltip wrapperStyle={{ width: 100, backgroundColor: '#ccc' }} />
-        {/* <Legend width={100} wrapperStyle={{ top: 40, right: 20, backgroundColor: '#f5f5f5', border: '1px solid #d5d5d5', borderRadius: 3, lineHeight: '40px' }} /> */}
+        <Tooltip content={CustomTooltip} viewBox={{ x: 0, y: 0, width: 400, height: 400, stroke:'#222222af' }} />
         <CartesianGrid stroke="#ccc" strokeDasharray="2 2" vertical={false} />
         <Bar yAxisId="right" dataKey="kilogram" fill="#000000" barSize={10} radius={[10, 10, 0, 0]} />
         <Bar yAxisId="left" dataKey="calories" fill="#FF0101" barSize={10} radius={[10, 10, 0, 0]}/>
       </BarChart>
     </div>
-  )
-  
+  ); 
 }
 
 export default DailyActivity;

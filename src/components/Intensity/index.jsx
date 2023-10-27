@@ -1,5 +1,5 @@
 import './style.css'
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
 
 
 function Intensity ({data}) {
@@ -24,7 +24,7 @@ function Intensity ({data}) {
 
   return (
     <div className='intensity-box'>
-      <RadarChart width={255} height={255} cx="50%" outerRadius="80%" data={formatedData} startAngle={30} endAngle={-330}>
+      <RadarChart width={260} height={260} cx="50%" outerRadius="70%" data={formatedData} startAngle={30} endAngle={-330}>
         <PolarGrid radialLines={false} />
         <PolarAngleAxis dataKey="kind" tick={{ fontSize: '11px', fontWeigth: 500, fill: '#FFF' }} />
         <PolarRadiusAxis axisLine={false} tick={false} />

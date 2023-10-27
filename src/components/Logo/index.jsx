@@ -7,8 +7,7 @@ function Logo() {
     <Link to="/" >
       <img src={logo} alt="" className="logo" />
     </Link>
-  )
-
+  );
 }
 
 export default Logo;

@@ -1,4 +1,4 @@
-import './style.css'
+import './style.css';
 
 function TitleArea ({userName}) {
   return (
@@ -6,7 +6,7 @@ function TitleArea ({userName}) {
       <h1>Bonjour <span className='name-user'>{userName}</span></h1>
       <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </div>
-  )
+  );
 }
 
-export default TitleArea
+export default TitleArea;

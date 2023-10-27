@@ -12,6 +12,8 @@ module.exports = {
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
+    'semi': ["error", "always"],
+    'quotes': ["error", "single", { "allowTemplateLiterals": true }],
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
