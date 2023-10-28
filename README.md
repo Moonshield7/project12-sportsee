@@ -29,7 +29,11 @@ You will also need to use the back-end API provided for the project, that you ca
 ### File organization
 
 The files containing the app are placed in the **src** folder.
+
 The **assets** folder contains the images used in the app.
+
 The **components** folder contains the components that are used to build tha app.
+
 The **pages** folder contains the different pages that we can reach using the app.
+
 The **utils** folder contains the calls to the backend API to get the data of the users.
