@@ -12,8 +12,8 @@ function MacroCard ({type, value}) {
       pic = calories;
       break;
     case 'Protéines' :
-        pic = protein;
-        break;
+      pic = protein;
+      break;
     case 'Glucides' :
       pic = carbs;
       break;
