@@ -51,7 +51,7 @@ function DailyActivity ({data}) {
         <YAxis yAxisId="left" orientation="left" hide={true} />
         <Tooltip content={CustomTooltip} viewBox={{ x: 0, y: 0, width: 400, height: 400, stroke:'#222222af' }} />
         <CartesianGrid stroke="#ccc" strokeDasharray="2 2" vertical={false} />
-        <Bar yAxisId="right" dataKey="kilogram" fill="#000000" barSize={10} radius={[10, 10, 0, 0]} />
+        <Bar yAxisId="right" dataKey="kilogram" fill="#282D30" barSize={10} radius={[10, 10, 0, 0]} />
         <Bar yAxisId="left" dataKey="calories" fill="#FF0101" barSize={10} radius={[10, 10, 0, 0]}/>
       </BarChart>
     </div>

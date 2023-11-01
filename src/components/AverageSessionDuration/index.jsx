@@ -27,8 +27,14 @@ function AverageSessionDuration ({data}) {
     <div className='session-box'>
       <h3 className='legend'>Durée moyenne des sessions</h3>
       <LineChart width={260} height={260} data={formatedData}>
-      <Tooltip content={CustomTooltip} cursor={{ stroke: 'rgba(0, 0, 0, 0.1)', strokeWidth: 40 }} />
-        <Line type="natural" dataKey="duration" stroke='#ffffff9c' dot={false} strokeWidth={2} />
+        <defs>
+          <linearGradient id="colorUv" x1="0%" y1="0" x2="100%" y2="0">
+            <stop offset="30%" stopColor="#ffffff9c" stopOpacity={0.4} />
+            <stop offset="95%" stopColor="#ffffff9c" stopOpacity={1} />
+          </linearGradient>
+        </defs>
+        <Tooltip content={CustomTooltip} cursor={{ stroke: 'rgba(0, 0, 0, 0.1)', strokeWidth: 40}} />
+        <Line type="natural" dataKey="duration" stroke='url(#colorUv)' dot={false} strokeWidth={2} />
         <XAxis dataKey="dayInitial" padding={{ left: 10, right: 10 }} axisLine={false} tickLine={false} stroke='#ffffff9c' />
         <YAxis domain={['dataMin -15', 'dataMax +20']} hide={true} />
       </LineChart>
