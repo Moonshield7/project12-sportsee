@@ -4,50 +4,47 @@ import { useState } from 'react';
 import MainContainer from '../../components/MainContainer';
 import TopNavbar from '../../components/TopNavbar';
 import LateralNavbar from '../../components/LateralNavbar';
+import { getActivity, getAverageSession, getPerformance, getUser } from '../../services/API';
+import ErrorDisplay from '../../components/ErrorDisplay';
+import Loader from '../../components/Loader';
 
 function CallApi ({valueId}) {
-  const [user, setUser] = useState();
-  const [activity, setActivity] = useState();
-  const [averageSession, setAverageSession] = useState();
-  const [performance, setPerformance] = useState();
+  const [user, setUser] = useState(undefined);
+  const [activity, setActivity] = useState(undefined);
+  const [averageSession, setAverageSession] = useState(undefined);
+  const [performance, setPerformance] = useState(undefined);
+  const [isLoading, setIsLoading] = useState();
 
   useEffect(() => {
-    async function getUser(idUser) {
-      const response = await fetch(`http://localhost:3000/user/${idUser}`);
-      const dataUser = await response.json();
-      setUser(dataUser.data);
+    async function setDatas (){
+      try {
+        setIsLoading(true);
+        setUser(await getUser(valueId));
+        setActivity(await getActivity(valueId));
+        setAverageSession(await getAverageSession(valueId));
+        setPerformance(await getPerformance(valueId));
+      } catch {
+        console.error('Une erreur est survenue lors de la récupération des données.');
+        setUser(null);
+        setActivity(null);
+        setAverageSession(null);
+        setPerformance(null);
+      } finally {
+        setIsLoading(false);
+      }
     }
 
-    async function getActivity(idUser) {
-      const response = await fetch(`http://localhost:3000/user/${idUser}/activity`);
-      const dataActivity = await response.json();
-      setActivity(dataActivity.data.sessions);
-    }
+    setDatas();
 
-    async function getAverageSession(idUser) {
-      const response = await fetch(`http://localhost:3000/user/${idUser}/average-sessions`);
-      const dataAverageSession = await response.json();
-      setAverageSession(dataAverageSession.data.sessions);
-    }
-
-    async function getPerformance(idUser) {
-      const response = await fetch(`http://localhost:3000/user/${idUser}/performance`);
-      const dataPerformance = await response.json();
-      setPerformance(dataPerformance.data.data);
-    }
-
-    getUser(valueId);
-    getActivity(valueId);
-    getAverageSession(valueId);
-    getPerformance(valueId);
   }, [valueId]);
 
-  // console.log('user :', user)
-  // console.log('activity', activity)
-  // console.log('session', averageSession)
-  // console.log('performance', performance)
-  // console.log({valueId})
-
+  if(isLoading){
+    return <div>
+      <TopNavbar />
+      <LateralNavbar />
+      <Loader />
+    </div>;
+  }
   if(user !== undefined && activity !== undefined && averageSession !== undefined && performance !== undefined) {
     return (
       <div>
@@ -56,6 +53,14 @@ function CallApi ({valueId}) {
         <MainContainer dataUser={user} dataActivity={activity} dataAverageSession={averageSession}  dataPerformance={performance} />
         </div>
     );
+  } else if(user === null || activity === null || averageSession === null || performance === null) {
+    return (
+      <div>
+        <TopNavbar />
+        <LateralNavbar />
+        <ErrorDisplay />
+      </div>
+      );
   }
 }
 

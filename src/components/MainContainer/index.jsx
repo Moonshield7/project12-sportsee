@@ -21,7 +21,7 @@ function MainContainer ({dataUser, dataActivity, dataAverageSession, dataPerform
           <div className='small-graphics-container'>
             <AverageSessionDuration data={dataAverageSession} />
             <Intensity data={dataPerformance} />
-            <Score scoreValue={dataUser.score || dataUser.todayScore}/>
+            <Score scoreValue={dataUser.score}/>
           </div>
         </div>
         <ul className='macro-container'>
