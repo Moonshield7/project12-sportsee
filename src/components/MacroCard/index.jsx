@@ -27,7 +27,7 @@ function MacroCard ({type, value}) {
   return (<li className='macro-card'>
     <img src={pic} alt="" />
     <div className='macro-card-text'>
-      <h3>{type === 'Calories' ? `${value}kCal` : `${value}g`}</h3>
+      <h3>{type === 'Calories' ? `${new Intl.NumberFormat('en-IN', {style: 'decimal', maximumFractionDigits: 0}).format(value)}kCal` : `${value}g`}</h3>
       <p>{type}</p>
     </div>
   </li>);
