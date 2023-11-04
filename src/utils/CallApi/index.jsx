@@ -26,9 +26,7 @@ function CallApi ({valueId}) {
       } catch {
         console.error('Une erreur est survenue lors de la récupération des données.');
         setUser(null);
-        setActivity(null);
-        setAverageSession(null);
-        setPerformance(null);
+        setIsLoading(false);
       } finally {
         setIsLoading(false);
       }
@@ -53,7 +51,9 @@ function CallApi ({valueId}) {
         <MainContainer dataUser={user} dataActivity={activity} dataAverageSession={averageSession}  dataPerformance={performance} />
         </div>
     );
-  } else if(user === null || activity === null || averageSession === null || performance === null) {
+  }
+  
+  if(user === null || activity === null || averageSession === null || performance === null) {
     return (
       <div>
         <TopNavbar />
