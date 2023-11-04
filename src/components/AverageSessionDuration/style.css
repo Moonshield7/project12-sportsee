@@ -14,3 +14,12 @@
   z-index: 1;
   color: #ffffff9c ;
 }
+
+.tooltip-container {
+  padding: 0.5rem;
+
+  font-size: 0.7rem;
+  font-weight: 500;
+
+  background: white;
+}
