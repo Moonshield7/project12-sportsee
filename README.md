@@ -36,4 +36,4 @@ The **components** folder contains the components that are used to build tha app
 
 The **pages** folder contains the different pages that we can reach using the app.
 
-The **utils** folder contains the calls to the backend API to get the data of the users.
+The **services** folder contains the calls to the backend API to get the data of the users, that are called in the *CallApi* component, in the **utils** folder..
