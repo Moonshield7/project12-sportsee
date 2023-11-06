@@ -3,6 +3,7 @@
   height: 260px;
   background-color: #FF0000;
   border-radius: 15px;
+  overflow: hidden;
 }
 
 .legend {
