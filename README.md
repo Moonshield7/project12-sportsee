@@ -1,5 +1,5 @@
 # P12 : Développez un tableau de bord d'analytics avec React
-## Par Fannie Presman - Octobre 2023
+## Par Moonshield - Octobre 2023
 
 ### Getting started
 
